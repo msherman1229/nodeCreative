@@ -1,0 +1,121 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2016 Electiion Quiz</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="./stylesheets/styles.css">
+</head>
+<body ng-app="app" ng-controller="mainCtrl">
+<div class="container" id="mainContainer">
+<div class="page-header">
+<h1>Who deserves your vote?</h1>
+</div>
+<img src="./img/eagle.png" id="eagle"/>
+<div class="row">
+<div class="col-lg-4 col-lg-offset-6">
+<br><br>
+<div class="container">
+<form name="userForm" ng-submit="questionSubmit(user)" >
+	<h2>What is your opinion on immigration?</h2>
+	<label>
+		<input type="radio" name="question" ng-model="user.choice" value="1">
+		The more the merrier.
+	</label><br>
+	<label>
+		<input type="radio" name="question" ng-model="user.choice" value="2">
+		Legal immigration is fine, and I think that illegal immigrants that are already here should be granted amnesty and citizenship.
+	<label>
+		<input type="radio" name="question" ng-model="user.choice" value="3">
+		Legal immigration is fine, and I think that illegal immigrants should be deported.
+	</label><br>
+	<label>
+		<input type="radio" name="question" ng-model="user.choice" value="4">
+		I think we should build a wall around the entire country.  
+	</label><br>
+	<h2>How do you feel about Obamacare?</h2>
+        <label>
+                <input type="radio" name="question2" ng-model="user.choice2" value="1">
+                It is great! Some work needs to be done, but it should be largely left in place. 
+        </label><br>
+        <label>
+                <input type="radio" name="question2" ng-model="user.choice2" value="2">
+                It does not go far enough, and we should move to a single payer system.
+        </label><br>
+        <label>
+                <input type="radio" name="question2" ng-model="user.choice2" value="3">
+                It is the worst and should be repealed.  
+        </label><br>
+	<h2>Previous political experience in a candidate is...</h2>
+        <label>
+                <input type="radio" name="question3" ng-model="user.choice3" value="1">
+                Very important to me.  
+        </label><br>
+        <label>
+                <input type="radio" name="question3" ng-model="user.choice3" value="2">
+                Somewhat important to me.
+        </label><br>
+        <label>
+                <input type="radio" name="question3" ng-model="user.choice3" value="3">
+                I don't really care as long as he/she can get the job done. 
+        </label><br>
+	<label>
+		<input type="radio" name="question3" ng-model="user.choice3" value="4">
+		Negative. Down with the establishment!
+	<h2>What should the relationship be between the government and Planned Parenthood?</h2>
+        <label>
+                <input type="radio" name="question4" ng-model="user.choice4" value="1">
+                The government should support Planned Parenthood as much as possible.
+        </label><br>
+        <label>
+                <input type="radio" name="question4" ng-model="user.choice4" value="2">
+                While the government should support Planned Parenthood, as a stipulation of their support, no abortions should be performed by the organization. 
+        </label><br>
+        <label>
+                <input type="radio" name="question4" ng-model="user.choice4" value="3">
+                The government should have no ties to Planned Parenthood. 
+        </label><br>
+	<h2>Economy/Taxes?</h2>
+        <label>
+                <input type="radio" name="question5" ng-model="user.choice5" value="1">
+                The more the merrier.
+        </label><br>
+        <label>
+                <input type="radio" name="question5" ng-model="user.choice5" value="2">
+                Meh
+        </label><br>
+        <label>
+                <input type="radio" name="question5" ng-model="user.choice5" value="3">
+                I think we should build a wall around the entire country.
+        </label><br>
+	<h2>Foreign policy?</h2>
+        <label>
+                <input type="radio" name="question6" ng-model="user.choice6" value="1">
+                The more the merrier.
+        </label><br>
+        <label>
+                <input type="radio" name="question6" ng-model="user.choice6" value="2">
+                Meh
+        </label><br>
+        <label>
+                <input type="radio" name="question6" ng-model="user.choice6" value="3">
+                I think we should build a wall around the entire country.
+        </label><br>
+	<button type="submit" class="btn btn-default btn-lg">Submit</button>
+</form>
+</div>
+</div>
+<div class="container">
+	<ul ng-if="results.length">
+		<li ng-repeat="r in results">
+		<p>{{r.name}}</p>
+		<img ng-src="{{r.image}}"/>
+		</li>
+	</ul>
+</div>
+<script src="./javascripts/script.js"></script>
+</div>
+</body>
+</html>
