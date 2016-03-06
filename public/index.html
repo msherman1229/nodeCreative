@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>2016 Electiion Quiz</title>
+<title>2016 Election Quiz</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -77,31 +77,35 @@
                 <input type="radio" name="question4" ng-model="user.choice4" value="3">
                 The government should have no ties to Planned Parenthood. 
         </label><br>
-	<h2>Economy/Taxes?</h2>
+	<h2>What changes should be made to the tax system?</h2>
         <label>
                 <input type="radio" name="question5" ng-model="user.choice5" value="1">
-                The more the merrier.
+               	Tax the heck out of the extremely rich and remove corporate tax loopholes. 
         </label><br>
         <label>
                 <input type="radio" name="question5" ng-model="user.choice5" value="2">
-                Meh
+                The tax code needs to be simplified. 
         </label><br>
         <label>
                 <input type="radio" name="question5" ng-model="user.choice5" value="3">
-                I think we should build a wall around the entire country.
+                Taxes should be lowered across the board and government spending should be cut. 
         </label><br>
-	<h2>Foreign policy?</h2>
+	<h2>How important is civility to you in a presidential candidate?</h2>
         <label>
                 <input type="radio" name="question6" ng-model="user.choice6" value="1">
-                The more the merrier.
+                I would like to be able to look up to the President as a role model.
         </label><br>
         <label>
                 <input type="radio" name="question6" ng-model="user.choice6" value="2">
-                Meh
+                A President should be well behaved but not unafraid to voice his or her true opinion or feelings. The President should be passionate about issues and the country.  
+        </label><br>
+	<label>
+                <input type="radio" name="question6" ng-model="user.choice6" value="3">
+                A President should try to act with poise, but it is obviously not his or her fault if he or she doesn't start it. (Cough Rubio cough Rubio)
         </label><br>
         <label>
-                <input type="radio" name="question6" ng-model="user.choice6" value="3">
-                I think we should build a wall around the entire country.
+                <input type="radio" name="question6" ng-model="user.choice6" value="4">
+                Only a loser would ask that question. 
         </label><br>
 	<button type="submit" class="btn btn-default btn-lg">Submit</button>
 </form>
@@ -110,8 +114,8 @@
 <div class="container">
 	<ul ng-if="results.length">
 		<li ng-repeat="r in results">
-		<p>{{r.name}}</p>
-		<img ng-src="{{r.image}}"/>
+		<p>{{r.result.name}}</p>
+		<img ng-src="{{r.result.image}}"/>
 		</li>
 	</ul>
 </div>

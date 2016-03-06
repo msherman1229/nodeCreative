@@ -6,9 +6,9 @@ app.controller("mainCtrl", mainCtrl);
 function resultFetcher ($http) {
 	var API_ROOT = 'results';
 	return {
-		get: function () {
+		get: function ( winner ) {
 			return $http
-				.get(API_ROOT)
+				.get(API_ROOT + "?q=" + winner)
 				.then(function (resp) {
 					return resp.data
 				})
@@ -22,24 +22,26 @@ function mainCtrl ($scope, resultFetcher) {
 		var q2 = $scope.user.choice2; 
 		var q3 = $scope.user.choice3; 
 		var q4 = $scope.user.choice4; 
-		calculator(q1, q2, q3, q4);    
+		var q5 = $scope.user.choice5; 
+		var q6 = $scope.user.choice6; 
+		var winner = calculator(q1, q2, q3, q4, q5, q6);
+		resultFetcher.get(winner)
+                	.then(function (data) {
+                        	console.log(data);
+                        	$scope.results = data;
+                	});    
 	};
-	resultFetcher.get()
-		.then(function (data) { 
-			console.log(data);
-			$scope.results = data;  
-		}); 
 }
 
-function calculator ( q1, q2, q3, q4)
+function calculator ( q1, q2, q3, q4, q5, q6 )
 {
 	var candidates = [
-		{name:"Hillary Clinton", count: 0}, 
-		{name:"Ted Cruz", count: 0}, 
-		{name:"John Kasich", count: 0}, 
-		{name:"Marco Rubio", count: 0}, 
-		{name:"Bernie Sanders", count: 0}, 
-		{name:"Donald Trump", count: 0}
+		{name:"Hillary\ Clinton", count: 0}, 
+		{name:"Ted\ Cruz", count: 0}, 
+		{name:"John\ Kasich", count: 0}, 
+		{name:"Marco\ Rubio", count: 0}, 
+		{name:"Bernie\ Sanders", count: 0}, 
+		{name:"Donald\ Trump", count: 0}
 	]
 	switch (q1) {
 	case "1":
@@ -95,14 +97,52 @@ function calculator ( q1, q2, q3, q4)
 	case "1":
 		candidates[0]["count"]++;
 		candidates[4]["count"]++;
+		break;
 	case "2":
 		candidates[5]["count"]++;
+		break;
 	case "3":
 		candidates[1]["count"]++;
 		candidates[3]["count"]++;
 		candidates[2]["count"]++;
+		break;
 	default:
 	}
+	switch (q5) {
+	case "1":
+		candidates[1]["count"]++;
+		candidates[4]["count"]++;
+		break;
+	case "2":
+		candidates[3]["count"]++;
+		candidates[1]["count"]++;
+		break; 
+	case "3":
+		candidates[5]["count"]++;
+		candidates[2]["count"]++;
+		break;
+	default:
+	}
+	switch (q6) {
+	case "1":
+		candidates[2]["count"]++; 
+		candidates[0]["count"]--; 
+		candidates[1]["count"]--;
+		candidates[5]["count"]--;
+		break;
+	case "2":
+		candidates[0]["count"]++;
+		candidates[4]["count"]++;
+		break;
+	case "3":
+		candidates[1]["count"]++;
+		candidates[3]["count"]++;
+		break;
+	case "4":
+		candidates[5]["count"]++;
+		break;
+	default:
+	}	
 	candidates.sort(function(a,b) {return b.count-a.count});
-	console.log(candidates[0]["name"]); 
+	return candidates[0]["name"]; 
 }

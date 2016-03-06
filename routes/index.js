@@ -9,8 +9,18 @@ router.get('/', function(req, res, next) {
 
 //REST SERVICE RETURN 
 router.get('/results', function(req, res, next) {
-	console.log("In results"); 
-	res.send(results); 
+	var myRe = new RegExp("^" + req.query.q); 
+	var jsonresult = []; 
+	for ( var i = 0; i < results.length; i++) {
+		var result = results[i]["name"].search(myRe); 
+		if (result != -1)
+		{
+			console.log(results[i]); 
+			jsonresult.push({result:results[i]}); 
+		}
+	}
+	//res.send(results);
+	res.status(200).json(jsonresult);  
 }); 
 
 module.exports = router;
