@@ -1,7 +1,18 @@
-#mainContainer {
-text-align: center; 
-}
 #eagle {
 width: 200px;
 margin-bottom: -45px; 
+}
+.jumbotron {
+text-align: center; 
+color: white; 
+background: blue; 
+}
+h1 {
+color: black; 
+}
+h2 {
+color: red; 
+}
+.questions {
+margin-left: 100px; 
 }

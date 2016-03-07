@@ -1,0 +1,36 @@
+nohup: ignoring input
+[0mGET / [36m304 [0m8.601 ms - -[0m
+[0mGET /stylesheets/styles.css [36m304 [0m2.555 ms - -[0m
+[0mGET /javascripts/script.js [36m304 [0m2.876 ms - -[0m
+[0mGET /img/eagle.png [36m304 [0m2.706 ms - -[0m
+[0mGET / [36m304 [0m0.383 ms - -[0m
+[0mGET /img/eagle.png [36m304 [0m0.636 ms - -[0m
+[0mGET /stylesheets/styles.css [36m304 [0m0.572 ms - -[0m
+[0mGET /javascripts/script.js [36m304 [0m0.222 ms - -[0m
+[0mGET / [36m304 [0m0.799 ms - -[0m
+[0mGET /stylesheets/styles.css [36m304 [0m0.260 ms - -[0m
+[0mGET /img/eagle.png [36m304 [0m0.217 ms - -[0m
+[0mGET /javascripts/script.js [36m304 [0m0.217 ms - -[0m
+[0mGET / [32m200 [0m2.752 ms - 5792[0m
+[0mGET /stylesheets/styles.css [36m304 [0m0.350 ms - -[0m
+[0mGET /javascripts/script.js [36m304 [0m0.222 ms - -[0m
+[0mGET /img/eagle.png [36m304 [0m0.356 ms - -[0m
+[0mGET / [36m304 [0m0.855 ms - -[0m
+[0mGET /img/eagle.png [36m304 [0m1.044 ms - -[0m
+[0mGET /stylesheets/styles.css [36m304 [0m0.889 ms - -[0m
+[0mGET /javascripts/script.js [36m304 [0m0.211 ms - -[0m
+{ name: 'Hillary Clinton',
+  image: './images/clinton.png',
+  slogan: 'Hillary for American',
+  title: 'You\'re with Her! Hill yes!' }
+[0mGET /results?q=Hillary%20Clinton [32m200 [0m7.439 ms - 139[0m
+[0mGET /images/clinton.png [36m304 [0m0.332 ms - -[0m
+[0mGET / [32m200 [0m1.765 ms - 6010[0m
+[0mGET /stylesheets/styles.css [32m200 [0m1.128 ms - 196[0m
+[0mGET /javascripts/script.js [36m304 [0m0.332 ms - -[0m
+{ name: 'Hillary Clinton',
+  image: './images/clinton.png',
+  slogan: 'Hillary for American',
+  title: 'You\'re with Her! Hill yes!' }
+[0mGET /results?q=Hillary%20Clinton [36m304 [0m1.527 ms - -[0m
+[0mGET /images/clinton.png [36m304 [0m0.271 ms - -[0m
