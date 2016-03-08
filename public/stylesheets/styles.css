@@ -23,8 +23,29 @@ ul {
 list-style-type: none; 
 }
 #slogan {
-color: white; 
+color: black;  
 }
 #link {
-color: white; 
+color: black; 
+}
+canvas {
+display: block;
+position: fixed;  
+}
+#resultJumob {
+background: white;
+position: relative; 
+z-index: -1;
+margin-top: -50px;   
+}
+#resultName {
+color: white;
+background: blue; 
+border-radius: 10px;
+padding-top: 5px; 
+padding-bottom: 5px;  
+}
+#linkButton {
+position: fixed; 
+z-index: 4; 
 }

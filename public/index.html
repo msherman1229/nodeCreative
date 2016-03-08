@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="./stylesheets/styles.css">
 </head>
 <body ng-app="app" ng-controller="mainCtrl">
-<canvas id="canvas"></canvas>
 <div class="container" id="mainContainer">
 <div class="jumbotron">
     <h1>Election Day</h1> 
@@ -130,14 +129,19 @@
 </form>
 </div>
 </div>
+<canvas id="canvas"></canvas>
 <div class="container">
 	<ul ng-if="results.length">
 	<li ng-repeat="r in results">
-	<div class="jumbotron">
-	<h1>You got . . . {{r.result.name}}!</h1>
+	<div class="jumbotron" id="resultJumob">
+	<h1 id="resultName">You got . . . {{r.result.name}}!</h1>
 	<img ng-src="{{r.result.image}}"/>
 	<h2 id="slogan">{{r.result.title}}</h2>
-	<a ng-href="{{r.result.url}}" id="link"><h3>Learn more about this candidate<h3></a>
+	<!--<div class="container" id="linkButton">
+	<a ng-href="{{r.result.url}}" id="link">
+		<button type="submit" class="btn btn-default btn-lg">Learn more about this Candidate</button>
+	</a>-->
+	</div>
 	</div>
 	</li>
 	</ul>
