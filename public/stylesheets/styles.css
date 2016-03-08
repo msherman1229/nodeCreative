@@ -16,3 +16,15 @@ color: red;
 .questions {
 margin-left: 100px; 
 }
+button {
+text-align: center; 
+}
+ul {
+list-style-type: none; 
+}
+#slogan {
+color: white; 
+}
+#link {
+color: white; 
+}

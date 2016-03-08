@@ -28,36 +28,39 @@ module.exports = router;
 var results = [
 	{
 		name: "Hillary Clinton",
-		image: "./images/clinton.png",
-		slogan: "Hillary for American", 
-		title: "You're with Her! Hill yes!"
+		image: "./images/clinton.png", 
+		title: "You're with Her! Hill yes!",
+		url: "https://www.hillaryclinton.com/"
 	},
 	{
 		name: "Bernie Sanders",
 		image: "./images/sanders.png", 
-		slogan: "A Future to Believe In", 
-		title: "Feel the Bern!"
+		title: "Feel the Bern!", 
+		url: "https://go.berniesanders.com/page/content/contribute/"
 	},
 	{
 		name: "Ted Cruz",
 		image: "./images/cruz.png",
-		slogan: "Courageous Conservatives: Reigniting the Promise of America",
-		title: "TrusTed!"
+		title: "TrusTed!", 
+		url: "https://www.tedcruz.org/about/"
 	},
 	{
 		name: "John Kasich", 
 		image: "./images/kasich.png", 
-		slogan: "Kasich for US"
+		title: "Kasich for US", 
+		url: "https://johnkasich.com/"
 	},
 	{
 		name: "Marco Rubio", 
 		image: "./images/rubio.png", 
-		slogan: "A New American Century"
+		title: "A New American Century", 
+		url: "https://marcorubio.com/"
 	}, 
 	{
 		name: "Donald Trump",
 		image: "./images/trump.png", 
-		slogan: "Make America Great Again!"
+		title: "Make America Great Again!", 
+		url: "https://www.donaldjtrump.com/"
 	}
 ];
 	

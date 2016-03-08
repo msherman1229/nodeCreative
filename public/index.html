@@ -9,10 +9,11 @@
 <link rel="stylesheet" href="./stylesheets/styles.css">
 </head>
 <body ng-app="app" ng-controller="mainCtrl">
+<canvas id="canvas"></canvas>
 <div class="container" id="mainContainer">
 <div class="jumbotron">
     <h1>Election Day</h1> 
-    <p>Find out which presiential canditate fits your preferences?</p> 
+    <p>Find out which Presidential candidate best fits your political opinions</p> 
      <img class="flag" src="http://2.bp.blogspot.com/-NlSMGImlIQ0/T8uMIA5YrUI/AAAAAAAAHjA/mPfCUkeGRfM/s1600/south%2Bpark%2Bamerican%2Busa%2Bflag.jpg" alt="US FLAG" style="width:300px;height:170px;">
  </div>
 
@@ -22,6 +23,7 @@
 <br><br>
 <div class="questions">
 <form name="userForm" ng-submit="questionSubmit(user)" >
+	<form>
 	<h2>What is your opinion on immigration?</h2>
 	<label>
 		<input type="radio" name="question" ng-model="user.choice" value="1">
@@ -37,7 +39,9 @@
 	<label>
 		<input type="radio" name="question" ng-model="user.choice" value="4">
 		I think we should build a wall around the entire country.  
-	</label><br>
+	</label>
+	</form><br>
+	<form>
 	<h2>How do you feel about Obamacare?</h2>
         <label>
                 <input type="radio" name="question2" ng-model="user.choice2" value="1">
@@ -50,7 +54,9 @@
         <label>
                 <input type="radio" name="question2" ng-model="user.choice2" value="3">
                 It is the worst and should be repealed.  
-        </label><br>
+        </label>
+	</form><br>
+	<form>
 	<h2>Previous political experience in a candidate is...</h2>
         <label>
                 <input type="radio" name="question3" ng-model="user.choice3" value="1">
@@ -67,6 +73,9 @@
 	<label>
 		<input type="radio" name="question3" ng-model="user.choice3" value="4">
 		Negative. Down with the establishment!
+	</label>
+	</form><br>
+	<form>
 	<h2>What should the relationship be between the government and Planned Parenthood?</h2>
         <label>
                 <input type="radio" name="question4" ng-model="user.choice4" value="1">
@@ -79,7 +88,9 @@
         <label>
                 <input type="radio" name="question4" ng-model="user.choice4" value="3">
                 The government should have no ties to Planned Parenthood. 
-        </label><br>
+        </label>
+	</form><br>
+	<form>
 	<h2>What changes should be made to the tax system?</h2>
         <label>
                 <input type="radio" name="question5" ng-model="user.choice5" value="1">
@@ -92,7 +103,9 @@
         <label>
                 <input type="radio" name="question5" ng-model="user.choice5" value="3">
                 Taxes should be lowered across the board and government spending should be cut. 
-        </label><br>
+        </label>
+	</form><br>
+	<form>
 	<h2>How important is civility to you in a presidential candidate?</h2>
         <label>
                 <input type="radio" name="question6" ng-model="user.choice6" value="1">
@@ -104,22 +117,29 @@
         </label><br>
 	<label>
                 <input type="radio" name="question6" ng-model="user.choice6" value="3">
-                A President should try to act with poise, but it is obviously not his or her fault if he or she doesn't start it. (Cough Rubio cough Rubio)
+                A President should try to act with poise, but it is obviously not his or her fault if he or she doesn't start it. (Cough cough Rubio)
         </label><br>
         <label>
                 <input type="radio" name="question6" ng-model="user.choice6" value="4">
                 Only a loser would ask that question. 
-        </label><br>
+        </label>
+	</form><br>
+	<br>
+	<br>
 	<button type="submit" class="btn btn-default btn-lg">Submit</button>
 </form>
 </div>
 </div>
 <div class="container">
 	<ul ng-if="results.length">
-		<li ng-repeat="r in results">
-		<p>{{r.result.name}}</p>
-		<img ng-src="{{r.result.image}}"/>
-		</li>
+	<li ng-repeat="r in results">
+	<div class="jumbotron">
+	<h1>You got . . . {{r.result.name}}!</h1>
+	<img ng-src="{{r.result.image}}"/>
+	<h2 id="slogan">{{r.result.title}}</h2>
+	<a ng-href="{{r.result.url}}" id="link"><h3>Learn more about this candidate<h3></a>
+	</div>
+	</li>
 	</ul>
 </div>
 <script src="./javascripts/script.js"></script>

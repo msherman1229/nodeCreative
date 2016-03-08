@@ -28,6 +28,8 @@ function mainCtrl ($scope, resultFetcher) {
 		resultFetcher.get(winner)
                 	.then(function (data) {
                         	console.log(data);
+				$("#mainContainer").empty(); 
+				$(".questions").empty(); 
                         	$scope.results = data;
                 	});    
 	};
